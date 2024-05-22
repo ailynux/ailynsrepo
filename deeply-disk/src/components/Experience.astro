@@ -1,0 +1,121 @@
+---
+// components/Experience.astro
+---
+
+<section id="experience" class="section">
+    <h2 class="section-title">Experience</h2>
+    <div class="content">
+        <div class="experience-item">
+            <h3>ALLO Communications — Network Delivery Technician</h3>
+            <p>Apr 2022 - Present</p>
+            <ul>
+                <li>Collaborated with the Network Engineering team on equipment replacements, upgrades, and initial configurations.</li>
+                <li>Provided support for Network or Splice team outages and repairs, ensuring minimal service disruption.</li>
+                <li>Executed installations, including Network Interface Device (NID) setups, switches, routers, and ONT.</li>
+                <li>Designed and qualified GPON turn-ups for splitters in the Northern CO market.</li>
+                <li>Performed overnight maintenance to maintain the quality of network services at data centers.</li>
+                <li>Traveled across Northern Colorado to maintain Central Offices.</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <h3>Freelance Full-Stack Web Developer</h3>
+            <p>June 2023 - Present</p>
+            <ul>
+                <li>Developed and maintained responsive websites for small businesses using HTML, CSS, JavaScript, and React.</li>
+                <li>Implemented e-commerce solutions for clients, increasing online sales by an average of 30%.</li>
+                <li>Created custom web applications, improving client workflows and increasing efficiency.</li>
+                <li>Provided SEO optimization and digital marketing strategies to enhance client visibility online.</li>
+                <li>Worked closely with clients to understand their needs and deliver tailored solutions.</li>
+            </ul>
+        </div>
+        <div class="experience-item">
+            <h3>Vestas Blades America — Transport Manufacturing</h3>
+            <p>Feb 2019 - Apr 2022</p>
+            <ul>
+                <li>Oversaw logistical processes to ensure the safe transportation of oversized wind turbines.</li>
+                <li>Assured the acquisition, storage, and transportation of resources to their destinations.</li>
+                <li>Held professional crane certifications in compliance with OSHA standards.</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<style>
+    .section {
+        padding: 4rem 2rem;
+        background: #b8b8b8;
+        border-radius: 15px;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        opacity: 0;
+        transform: translateY(50px);
+        visibility: hidden;
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, transform;
+    }
+    .section.active {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+    .section-title {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 3rem;
+        margin-bottom: 1.5rem;
+        color: #333;
+        position: relative;
+    }
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 60px;
+        height: 4px;
+        background: #87a2ec;
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+    }
+    .content {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+    }
+    .section.active .content {
+        opacity: 1;
+    }
+    .experience-item {
+        background-color: #e9fdfb;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .experience-item:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+    .experience-item h3 {
+        margin: 0 0 15px 0;
+        font-size: 2rem;
+        color: #1a201d;
+        border-bottom: 2px solid #15ff29;
+        padding-bottom: 5px;
+    }
+    .experience-item p {
+        margin: 10px 0;
+        font-size: 1.2rem;
+        color: #333;
+        line-height: 1.6;
+    }
+    .experience-item ul {
+        padding-left: 20px;
+        list-style-type: disc;
+    }
+    .experience-item ul li {
+        margin-bottom: 10px;
+        font-size: 1.1rem;
+        color: #666;
+    }
+</style>

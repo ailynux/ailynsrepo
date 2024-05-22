@@ -1,0 +1,198 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+---
+
+<style>
+    body {
+        background-color: #1e293b;
+        color: #cbd5e1;
+        font-family: 'Roboto', sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .section {
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem;
+        background-color: #1e293b;
+        color: #cbd5e1;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: fadeIn 1s ease-in-out;
+    }
+    .intro {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+    }
+    .intro-text {
+        max-width: 60%;
+        animation: slideInLeft 1s ease-in-out;
+    }
+    .intro-text h1 {
+        font-size: 2.5rem;
+        color: #38bdf8;
+        margin-bottom: 0.5rem;
+    }
+    .intro-text p {
+        font-size: 1.1rem;
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+    .intro-text a {
+        color: #38bdf8;
+        text-decoration: none;
+        margin-right: 1rem;
+        font-size: 1.2rem;
+    }
+    .intro-text a:hover {
+        text-decoration: underline;
+    }
+    .intro-image {
+        animation: slideInRight 1s ease-in-out;
+        position: relative;
+    }
+    .intro-image img {
+        border-radius: 50%;
+        width: 300px;
+        height: 300px;
+        border: 3px solid #38bdf8;
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    }
+    .intro-image img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .intro-image::before {
+        content: '';
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        bottom: -10px;
+        left: -10px;
+        border-radius: 50%;
+        border: 2px dashed #38bdf8;
+        animation: rotate 5s linear infinite;
+    }
+    .social-links {
+        margin-top: 1rem;
+        display: flex;
+        align-items: center;
+    }
+    .social-links a {
+        color: #38bdf8;
+        margin-right: 1rem;
+        text-decoration: none;
+    }
+    .social-links a:hover {
+        text-decoration: underline;
+    }
+    h2 {
+        color: #fbbf24;
+        border-bottom: 2px solid #fbbf24;
+        padding-bottom: 0.5rem;
+        margin-bottom: 1rem;
+    }
+    .content {
+        margin-bottom: 2rem;
+    }
+    .project-card {
+        margin-bottom: 1.5rem;
+        padding: 1rem;
+        background-color: #2d3748;
+        border-radius: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+    }
+    .project-card h3 {
+        margin: 0;
+        font-size: 1.5rem;
+        color: #fbbf24;
+    }
+    .project-card .date {
+        font-size: 0.875rem;
+        color: #9ca3af;
+        margin-top: 0.25rem;
+    }
+    .project-card p {
+        margin: 0.5rem 0;
+        line-height: 1.5;
+    }
+    .project-card a {
+        color: #fbbf24;
+        text-decoration: none;
+    }
+    .project-card a:hover {
+        text-decoration: underline;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    @keyframes slideInLeft {
+        from { transform: translateX(-100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes slideInRight {
+        from { transform: translateX(100%); opacity: 0; }
+        to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes rotate {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+    }
+</style>
+
+<Layout title="Projects - Ailyn Diaz's Portfolio">
+    <main>
+        <!-- Intro Section -->
+        <section id="intro" class="section">
+            <div class="intro">
+                <div class="intro-text">
+                    <h1>MY PROJECT SHOWCASE</h1>
+                    <p>I love coding and i have so many things i dabble in but these are my most recent get to learn more about me.</p>
+                    <div class="social-links">
+                        <a href="https://github.com/ailyn-diaz" target="_blank">GitHub</a>
+                        <a href="https://www.linkedin.com/in/ailyn-diaz-802943225" target="_blank">LinkedIn</a>
+                        <a href="https://twitter.com/@yourtwitter" target="_blank">Twitter</a>
+                    </div>
+                </div>
+                <div class="intro-image">
+                    <img src="/images/studiopfp.png" alt="Ailyn Diaz">
+                </div>
+            </div>
+        </section>
+        
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2>Recent Projects</h2>
+            <div class="content link-card-grid">
+                <div class="project-card">
+                    <h3>Machine Learning Model</h3>
+                    <div class="date">Updated: Jan 2023</div>
+                    <p>Developed a machine learning model to predict stock prices with an accuracy of 80%. Implemented in Python using TensorFlow and trained on historical data from the past decade. Check out the code on <a href="https://github.com/ailyn-diaz/ml-stock-prediction" target="_blank">GitHub</a>.</p>
+                </div>
+                <div class="project-card">
+                    <h3>E-commerce Website</h3>
+                    <div class="date">Updated: Aug 2022</div>
+                    <p>Led the development of a scalable e-commerce platform using the MERN stack, which now supports over 500 daily transactions. Explore the project on <a href="https://github.com/ailyn-diaz/ecommerce-platform" target="_blank">GitHub</a>.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Inventory Management System</h3>
+                    <div class="date">Updated: Dec 2021</div>
+                    <p>Created a full-stack Inventory Management System using Angular, ASP.NET Core, and SQL Server. Integrated barcode scanning for efficient stock tracking. Detailed documentation and code available on <a href="https://github.com/ailyn-diaz/inventory-management-system" target="_blank">GitHub</a>.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Habit Tracker App</h3>
+                    <div class="date">Updated: May 2024</div>
+                    <p>Developed a SwiftUI app to help users track and build habits. Features include increment counters and progressive visual feedback. Check the project on <a href="https://github.com/ailyn-diaz/habit-tracker-app" target="_blank">GitHub</a>.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</Layout>

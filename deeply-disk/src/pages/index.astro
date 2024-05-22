@@ -1,0 +1,331 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Card from '../components/Card.astro';
+import TechStack from '../components/TechStack.astro';
+import Experience from '../components/Experience.astro';
+---
+
+<Layout title="Welcome to Astro - Ailyn Diaz's Portfolio">
+    <main>
+        <div class="profile">
+            <img src="/images/ailynpfp.png" alt="Ailyn Diaz" class="profile-img"/>
+        </div>
+        <h1>Hi there, <span class="text-gradient">I'm Ailyn</span></h1>
+
+        <p class="instructions">
+            Welcome to my professional portfolio. Scroll down to learn more about my work and experiences.
+        </p>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <h2 class="section-title">About Me</h2>
+            <div class="content">
+                <p>I'm a passionate software developer with a knack for creating efficient and scalable solutions. With a strong background in machine learning, web development, and system architecture, I bring a diverse skill set to any team.</p>
+                <TechStack />
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Projects</h2>
+            <div class="content link-card-grid">
+                <Card 
+                    title="Machine Learning Model" 
+                    body="Developed a machine learning model to predict stock prices with an accuracy of 80%. Implemented in Python using TensorFlow and trained on historical data from the past decade."
+                    href="/projects#machine-learning-model"
+                />
+                <Card 
+                    title="E-commerce Website" 
+                    body="Led the development of a scalable e-commerce platform using MERN stack, which now supports over 500 daily transactions."
+                    href="/projects#ecommerce-website"
+                />
+                <!-- Add more project cards as needed -->
+            </div>
+        </section>
+
+         <!-- Experience Section -->
+		 <Experience />
+
+       <!-- Education Section -->
+<section id="education" class="section">
+    <h2 class="section-title">Education</h2>
+    <div class="content">
+        <div class="education-item">
+            <h3>Aims Community College</h3>
+            <p><strong>Associate of Science in Computer Information Systems</strong>, 2023</p>
+            <p>GPA: 4.0 - High Honors, Summa Cum Laude</p>
+        </div>
+        <div class="education-item">
+            <h3>Full Stack Web Developer Certificate 2023</h3>
+            <p>Skills: HTML, CSS, JavaScript, SQL</p>
+        </div>
+        <div class="education-item">
+            <h3>C# Programming Certificate 2023</h3>
+            <p>Skills: C#, .NET, OOP principles</p>
+        </div>
+        <div class="education-item">
+            <h3>UNIX Certificate 2024</h3>
+            <p>Skills: UNIX system administration, shell scripting</p>
+        </div>
+        <div class="education-item">
+            <h3>Object-Oriented Programming Mobile Applications Certificate 2024</h3>
+            <p>Skills: Java, Android, Swift, mobile app development</p>
+        </div>
+        <!-- Add more education items as needed -->
+    </div>
+</section>
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <h2 class="section-title">Contact</h2>
+            <div class="content">
+                <p>Feel free to reach out to me for collaboration opportunities or to discuss potential projects.</p>
+                <p>Email: <a href="mailto:ailyn@example.com">ailyn@example.com</a></p>
+            </div>
+        </section>
+
+    </main>
+</Layout>
+
+<script lang="ts">
+document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.section').forEach(section => {
+        observer.observe(section);
+    });
+});
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+    body {
+        font-family: 'Nunito', sans-serif;
+        background: #282a2c;
+        margin: 0;
+        color: #333;
+    }
+
+	.education-item {
+    background-color: #000000;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.education-item h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.5rem;
+    color: #f8f8f8;
+    border-bottom: 2px solid #ee0000;
+    padding-bottom: 5px;
+}
+
+.education-item p {
+    margin: 10px 0;
+    font-size: 1.1rem;
+    color: #f7f7f7;
+    line-height: 1.5;
+}
+
+
+    .section {
+        opacity: 0;
+        transform: translateY(50px);
+        visibility: hidden;
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        will-change: opacity, transform;
+        padding: 4rem 2rem;
+        border-radius: 15px;
+        background: #b8b8b8;
+        margin-bottom: 2rem;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .section.active {
+        opacity: 1;
+        transform: translateY(0);
+        visibility: visible;
+    }
+
+    .section-title {
+        font-family: 'Roboto Mono', monospace;
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #333;
+        position: relative;
+    }
+
+    .section-title::after {
+        content: '';
+        display: block;
+        width: 50px;
+        height: 3px;
+        background: #87a2ec;
+        position: absolute;
+        bottom: -5px;
+        left: 0;
+    }
+
+    .content {
+        opacity: 0;
+        transition: opacity 0.8s ease-in-out;
+    }
+
+    .section.active .content {
+        opacity: 1;
+    }
+
+    .profile {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+
+    .profile-img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border: 4px solid white;
+        object-fit: cover;
+        transition: transform 0.3s ease;
+    }
+
+    .profile-img:hover {
+        transform: scale(1.1);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    main {
+        background: #c9dbdd;
+        color: #333;
+        padding: 3rem;
+        border-radius: 15px;
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    main:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    h1 {
+        font-size: 4rem;
+        font-weight: 700;
+        line-height: 1.2;
+        text-align: center;
+        margin-bottom: 2em;
+        animation: fadeIn 2s ease-in-out;
+    }
+
+    .text-gradient {
+        background-image: linear-gradient(to right, #6a11cb, #2575fc);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-size: 200% auto;
+        background-clip: text;
+        animation: shine 5s linear infinite;
+    }
+
+    @keyframes shine {
+        to {
+            background-position: 200% center;
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translate3d(0, -100%, 0);
+        }
+        to {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+    .instructions {
+        margin-bottom: 2rem;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        background: rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: 8px;
+        backdrop-filter: blur(5px);
+        font-size: 1.1rem;
+    }
+
+    .instructions code {
+        font-size: 0.9em;
+        font-weight: bold;
+        background: rgba(255, 255, 255, 0.2);
+        color: #fff;
+        border-radius: 4px;
+        padding: 0.3em 0.4em;
+    }
+
+    .link-card-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+        gap: 2rem;
+        padding: 0;
+    }
+
+    .experience-item, .education-item {
+        margin-bottom: 1.5rem;
+    }
+
+    Card {
+        transition: transform 0.3s ease;
+    }
+
+    Card:hover {
+        transform: translateY(-5px);
+    }
+
+    @media (max-width: 768px) {
+        main {
+            padding: 1rem;
+            font-size: 18px;
+        }
+
+        h1 {
+            font-size: 3rem;
+        }
+
+        .instructions, .instructions code {
+            font-size: 0.7em;
+        }
+    }
+
+    @media (max-width: 480px) {
+        main {
+            padding: 0.5rem;
+            font-size: 16px;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        .link-card-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
