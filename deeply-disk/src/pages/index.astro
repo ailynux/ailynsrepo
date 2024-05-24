@@ -3,6 +3,7 @@ import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
 import TechStack from '../components/TechStack.astro';
 import Experience from '../components/Experience.astro';
+import Education from '../components/Education.astro';
 ---
 
 <Layout title="Welcome to Astro - Ailyn Diaz's Portfolio">
@@ -43,37 +44,12 @@ import Experience from '../components/Experience.astro';
             </div>
         </section>
 
-         <!-- Experience Section -->
-		 <Experience />
+        <!-- Experience Section -->
+        <Experience />
 
-       <!-- Education Section -->
-<section id="education" class="section">
-    <h2 class="section-title">Education</h2>
-    <div class="content">
-        <div class="education-item">
-            <h3>Aims Community College</h3>
-            <p><strong>Associate of Science in Computer Information Systems</strong>, 2023</p>
-            <p>GPA: 4.0 - High Honors, Summa Cum Laude</p>
-        </div>
-        <div class="education-item">
-            <h3>Full Stack Web Developer Certificate 2023</h3>
-            <p>Skills: HTML, CSS, JavaScript, SQL</p>
-        </div>
-        <div class="education-item">
-            <h3>C# Programming Certificate 2023</h3>
-            <p>Skills: C#, .NET, OOP principles</p>
-        </div>
-        <div class="education-item">
-            <h3>UNIX Certificate 2024</h3>
-            <p>Skills: UNIX system administration, shell scripting</p>
-        </div>
-        <div class="education-item">
-            <h3>Object-Oriented Programming Mobile Applications Certificate 2024</h3>
-            <p>Skills: Java, Android, Swift, mobile app development</p>
-        </div>
-        <!-- Add more education items as needed -->
-    </div>
-</section>
+        <!-- Education Section -->
+        <Education />
+
         <!-- Contact Section -->
         <section id="contact" class="section">
             <h2 class="section-title">Contact</h2>
@@ -82,7 +58,6 @@ import Experience from '../components/Experience.astro';
                 <p>Email: <a href="mailto:ailyn@example.com">ailyn@example.com</a></p>
             </div>
         </section>
-
     </main>
 </Layout>
 
@@ -113,34 +88,6 @@ document.addEventListener("DOMContentLoaded", () => {
         color: #333;
     }
 
-	.education-item {
-    background-color: #000000;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.education-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-.education-item h3 {
-    margin: 0 0 10px 0;
-    font-size: 1.5rem;
-    color: #f8f8f8;
-    border-bottom: 2px solid #ee0000;
-    padding-bottom: 5px;
-}
-
-.education-item p {
-    margin: 10px 0;
-    font-size: 1.1rem;
-    color: #f7f7f7;
-    line-height: 1.5;
-}
-
 
     .section {
         opacity: 0;
@@ -150,7 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
         will-change: opacity, transform;
         padding: 4rem 2rem;
         border-radius: 15px;
-        background: #b8b8b8;
+        background: #bcbdbe;
         margin-bottom: 2rem;
         box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     }
@@ -174,7 +121,7 @@ document.addEventListener("DOMContentLoaded", () => {
         display: block;
         width: 50px;
         height: 3px;
-        background: #87a2ec;
+        background: #6f8fe9;
         position: absolute;
         bottom: -5px;
         left: 0;
@@ -211,8 +158,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     main {
-        background: #c9dbdd;
-        color: #333;
+        background: #549ad3;
+        color: #000000;
         padding: 3rem;
         border-radius: 15px;
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
