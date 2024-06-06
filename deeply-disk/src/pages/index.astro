@@ -1,12 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Card from '../components/Card.astro';
-import TechStack from '../components/TechStack.astro';
 import Experience from '../components/Experience.astro';
 import Education from '../components/Education.astro';
-import { useEffect } from 'react';
-import { createPortal } from 'react-dom';
-
+import About from '../components/About.astro';
+import Navbar from '../components/Navbar.astro';
 ---
 
 <Layout title="Welcome to Astro - Ailyn Diaz's Portfolio">
@@ -15,9 +13,9 @@ import { createPortal } from 'react-dom';
         <section id="profile" class="profile-section">
             <div class="profile-content">
                 <div class="profile-text">
-                    <h1>Frontend Developer.</h1>
-                    <p class="profile-description">I like to craft solid and scalable frontend products with great user experiences.</p>
-                    <p class="profile-info">Highly skilled at progressive enhancement, design systems & UI Engineering. Over a decade of experience building products for clients across several countries.</p>
+                    <h1>Ailyn Diaz</h1>
+                    <p class="profile-description">I like to craft solid and scalable apps with great user experiences and design.</p>
+                    <p class="profile-info">Enthusiastic about learning new technologies and building user-friendly web applications. Eager to contribute to team success through hard work and continuous learning.</p>
                 </div>
                 <div class="profile-image-container">
                     <div class="photo-frame">
@@ -32,14 +30,11 @@ import { createPortal } from 'react-dom';
             </div>
         </section>
 
+        <!-- Navbar Component -->
+        <Navbar />
+
         <!-- About Section -->
-        <section id="about" class="section">
-            <h2 class="section-title">About Me</h2>
-            <div class="content">
-                <p>I'm a passionate software developer with a knack for creating efficient and scalable solutions. With a strong background in machine learning, web development, and system architecture, I bring a diverse skill set to any team.</p>
-                <TechStack />
-            </div>
-        </section>
+        <About />
 
         <!-- Projects Section -->
         <section id="projects" class="section">
@@ -51,8 +46,8 @@ import { createPortal } from 'react-dom';
                     href="/projects#machine-learning-model"
                 />
                 <Card 
-                    title="E-commerce Website" 
-                    body="Led the development of a scalable e-commerce platform using MERN stack, which now supports over 500 daily transactions."
+                    title="Inventory Management System" 
+                    body="Inventory Management System, for managing inventory, tracking stock levels, and generating reports. Uses C#, ASP.NET Core, & SQL."
                     href="/projects#ecommerce-website"
                 />
                 <!-- Add more project cards as needed -->
@@ -117,35 +112,6 @@ document.addEventListener("DOMContentLoaded", () => {
         overflow: hidden;
     }
 
-    main::before, main::after {
-        content: '';
-        position: absolute;
-        top: 55%;
-        left: 50%;
-        width: 600px;
-        height: 600px;
-        background: linear-gradient(45deg, #ff004d, #090979, #00d4ff);
-        filter: blur(70px);
-        z-index: -1;
-        transform: translate(-50%, -50%);
-        animation: rotate 10s infinite linear;
-    }
-
-    main::after {
-        width: 800px;
-        height: 800px;
-        animation-duration: 18s;
-    }
-
-    @keyframes rotate {
-        from {
-            transform: translate(-50%, -50%) rotate(0deg);
-        }
-        to {
-            transform: translate(-50%, -50%) rotate(360deg);
-        }
-    }
-
     .profile-section {
         display: flex;
         align-items: center;
@@ -182,7 +148,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .profile-info {
         font-size: 1.2rem;
-        color: #ff004d;
+        color: #b43f3f;
     }
 
     .profile-image-container {
@@ -280,7 +246,7 @@ document.addEventListener("DOMContentLoaded", () => {
         font-family: 'Roboto Mono', monospace;
         font-size: 2.5rem;
         margin-bottom: 1rem;
-        color: #ff004d;
+        color: #ffffff;
         position: relative;
     }
 
@@ -322,16 +288,31 @@ document.addEventListener("DOMContentLoaded", () => {
             align-items: center;
         }
 
+        .profile-content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-text {
+            text-align: center;
+        }
+
         .profile-text h1 {
             font-size: 3rem;
         }
 
-        .instructions, .instructions code {
-            font-size: 0.7em;
+        .profile-description, .profile-info {
+            font-size: 1rem;
+            text-align: center;
         }
 
         .profile-image-container {
             margin-top: 2rem;
+        }
+
+        .floating-rectangles {
+            top: 90%;
         }
     }
 
@@ -346,12 +327,51 @@ document.addEventListener("DOMContentLoaded", () => {
             align-items: center;
         }
 
+        .profile-content {
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .profile-text {
+            text-align: center;
+        }
+
         .profile-text h1 {
             font-size: 2.5rem;
         }
 
+        .profile-description, .profile-info {
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .profile-image-container {
+            margin-top: 1rem;
+        }
+
+        .profile-img {
+            width: 200px;
+            height: 200px;
+        }
+
         .link-card-grid {
             grid-template-columns: 1fr;
+        }
+
+        .rectangle {
+            width: 30px;
+            height: 30px;
+        }
+
+        .rectangle:nth-child(2) {
+            width: 50px;
+            height: 50px;
+        }
+
+        .rectangle:nth-child(3) {
+            width: 70px;
+            height: 70px;
         }
     }
 </style>
