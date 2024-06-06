@@ -25,27 +25,25 @@ import TechStack from './TechStack.astro';
       </div>
 
       <div class="about-section MiniGame">
-    <h2>Mini Game</h2>
-    <canvas id="pong" width="400" height="300"></canvas>
-    <div class="game-controls">
-      <button id="startButton" class="game-button">Start Game</button>
-      <button id="stopButton" class="game-button">Stop Game</button>
-      <button id="resetButton" class="game-button">Reset Game</button>
-    </div>
-    <p id="winner"></p>
-  </div>
+      <h2>Mini Game</h2>
+        <canvas id="pong" width="400" height="300"></canvas>
+          <div class="game-controls">
+            <button id="startButton" class="game-button">Start Game</button>
+            <button id="stopButton" class="game-button">Stop Game</button>
+            <button id="resetButton" class="game-button">Reset Game</button>
+          </div>
+          <p id="winner"></p>
+      </div>
 
-      
       <div class="about-section hobbies">
         <h2>Skills</h2>
+        <img src="/images/typing_01.webp" />
         <p>I am proficient in full-stack development, with experience in TypeScript, React, Astro, SwiftUI, and more. I'm passionate about creating advanced, flashy, and interactive UI elements with animations. I love keeping up to date and learning new concepts.</p>
       </div>
       <div class="about-section skills">
         <h2>Get to Know Me...</h2>
         <p>I am proficient in full-stack development, with experience in TypeScript, React, Astro, SwiftUI, and more. I'm passionate about creating advanced, flashy, and interactive UI elements with animations. I love keeping up to date and learning new concepts.
-          I am proficient in full-stack development, with experience in TypeScript, React, Astro, SwiftUI, and more. I'm passionate about creating advanced, flashy, and interactive UI elements with animations. I love keeping up to date and learning new concepts.
-          I am proficient in full-stack development, with experience in TypeScript, React, Astro, SwiftUI, and more. I'm passionate about creating advanced, flashy, and interactive UI elements with animations. I love keeping up to date and learning new concepts.
-          I am proficient in full-stack development, with experience in TypeScript, React, Astro, SwiftUI, and more. I'm passionate about creating advanced, flashy, and interactive UI elements with animations. I love keeping up to date and learning new concepts.
+
         </p>
       </div>
       <div class="about-section gallery">
@@ -62,7 +60,6 @@ import TechStack from './TechStack.astro';
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
-
 
   .hero-section {
     display: flex;
@@ -155,8 +152,6 @@ import TechStack from './TechStack.astro';
   box-shadow: 0 0 10px rgba(255, 0, 0, 0.5), 0 0 20px rgba(255, 244, 85, 0.973);
 }
 
-
-  
   .additional-content {
     display: none;
     margin-top: 2rem;
@@ -179,7 +174,9 @@ import TechStack from './TechStack.astro';
     transform: translateY(0);
   }
   
-  .about-sections {
+  @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+.about-sections {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
@@ -188,10 +185,10 @@ import TechStack from './TechStack.astro';
 }
 
 .about-section {
-  background: linear-gradient(135deg, #f9f9f9 0%, #e2e2e2 100%);
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
   padding: 1.5rem;
   border-radius: 15px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 350px;
   text-align: left;
@@ -203,17 +200,19 @@ import TechStack from './TechStack.astro';
 }
 
 .about-section h2 {
-  font-size: 2.75rem;
+  font-size: 3rem;
   margin-bottom: 1rem;
-  color: #ffffff;
-  font-family: 'Segoe UI', sans-serif;
+  color: #00ff99;
+  font-family: 'VT323', monospace;
+  text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 40px #ff0099;
 }
 
 .about-section p {
-  font-size: 1rem;
-  color: #fafafa;
-  font-family: 'Segoe UI', sans-serif;
-  line-height: 1.5;
+  font-size: 1.25rem;
+  color: #f0f0f0;
+  font-family: 'VT323', monospace;
+  line-height: 1.75;
+  text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 40px #00ff99;
 }
 
 .background {
@@ -246,7 +245,7 @@ import TechStack from './TechStack.astro';
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   justify-content: center;
 }
 .gallery {
@@ -278,7 +277,7 @@ import TechStack from './TechStack.astro';
   transform: scale(1.05);
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 .time {
   background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
@@ -288,7 +287,7 @@ import TechStack from './TechStack.astro';
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 350px;
   width: 100%;
-  height: 150px;
+  height: 250px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -296,7 +295,7 @@ import TechStack from './TechStack.astro';
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: 'VT323', monospace;
   color: #00ff99;
   border: 2px solid rgba(0, 255, 255, 0.5);
 }
@@ -339,7 +338,7 @@ import TechStack from './TechStack.astro';
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 255, 255, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 400px;
-  width: 100%;
+  max-height: 600px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -347,7 +346,7 @@ import TechStack from './TechStack.astro';
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'Press Start 2P', sans-serif;
+  font-family: 'VT323', monospace;
   color: #00ff99;
   border: 2px solid rgba(0, 255, 255, 0.5);
 }
