@@ -5,7 +5,7 @@
 .education-section-container {
     padding: 4rem 2rem;
     border-radius: 15px;
-    background: #bcbdbe;
+    background: rgba(255, 255, 255, 0.1);
     margin-bottom: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     opacity: 0;
@@ -28,10 +28,10 @@
 .education-section-title {
     font-family: 'Roboto Mono', monospace;
     font-size: 2.5rem;
-    color: #333;
+    color: #ff004d;
     position: relative;
     text-align: left;
-    margin-left: 2rem;
+    margin-left: 1rem;
 }
 
 .education-section-title::after {
@@ -39,7 +39,7 @@
     display: block;
     width: 50px;
     height: 3px;
-    background: #6f8fe9;
+    background: #00d4ff;
     position: absolute;
     bottom: -5px;
     left: 0;
@@ -52,7 +52,7 @@
 }
 
 .education-item {
-    background: linear-gradient(135deg, #240205, #6f8fe9);
+    background: linear-gradient(135deg, #333, #777);
     padding: 1.5rem;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -76,14 +76,15 @@
 .education-item:hover {
     transform: translateY(-10px) rotateX(10deg);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
-    background: linear-gradient(135deg, #6f8fe9, #240205);
+    background: linear-gradient(135deg, #777, #333);
 }
+
 
 .education-item h3 {
     margin: 0 0 10px 0;
     font-size: 1.2rem;
     color: #f8f8f8;
-    border-bottom: 2px solid #ee0000;
+    border-bottom: 2px solid #ff004d;
     padding-bottom: 5px;
 }
 

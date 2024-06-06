@@ -25,14 +25,13 @@
 
 <style>
     :root {
-        --primary-gradient: linear-gradient(135deg, #6a11cb, #2575fc);
-        --secondary-gradient: linear-gradient(135deg, #ff6f61, #de4463);
-        --background-color: #ffffff;
-        --text-color: #333333;
-        --shadow-color: rgba(0, 0, 0, 0.1);
-        --shadow-hover-color: rgba(0, 0, 0, 0.15);
-        --title-gradient: linear-gradient(to right, #6a11cb, #2575fc);
-        --hover-gradient: linear-gradient(135deg, #5f0a87, #a4508b);
+        --primary-gradient: linear-gradient(135deg, #004d00, #0055b3);
+        --background-color: #0d0d0d;
+        --text-color: #ffffff;
+        --shadow-color: rgba(0, 0, 0, 0.6);
+        --shadow-hover-color: rgba(0, 0, 0, 0.8);
+        --title-gradient: linear-gradient(to right, #00b300, #0055b3);
+        --hover-gradient: linear-gradient(135deg, #00b300, #0055b3);
     }
 
     .tech-stack {
@@ -42,6 +41,21 @@
         border-radius: 12px;
         box-shadow: 0 8px 20px var(--shadow-color);
         transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tech-stack::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 200%;
+        height: 200%;
+        background: var(--primary-gradient);
+        filter: blur(100px);
+        z-index: -1;
+        transform: translate(-50%, -50%);
     }
 
     .tech-stack:hover {
@@ -50,7 +64,7 @@
     }
 
     .tech-stack-title {
-        font-size: 2rem;
+        font-size: 2.5rem;
         font-weight: bold;
         margin-bottom: 1.5rem;
         color: var(--text-color);
@@ -59,12 +73,13 @@
         background: var(--title-gradient);
         -webkit-background-clip: text;
         -webkit-text-fill-color: transparent;
+        animation: shine 5s linear infinite;
     }
 
     .tech-stack-title::after {
         content: '';
         display: block;
-        width: 60px;
+        width: 80px;
         height: 4px;
         background: var(--title-gradient);
         position: absolute;
@@ -86,23 +101,50 @@
 
     .tech-item {
         background: var(--primary-gradient);
-        color: var(--background-color);
+        color: var(--text-color);
         padding: 0.7rem 1.2rem;
         border-radius: 8px;
         font-size: 1rem;
         font-weight: 600;
-        transition: background 0.3s ease, transform 0.3s ease;
+        transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
         display: flex;
         align-items: center;
         justify-content: center;
         min-width: 80px;
         text-align: center;
         box-shadow: 0 4px 15px var(--shadow-color);
+        position: relative;
+        overflow: hidden;
+    }
+
+    .tech-item::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        height: 150%;
+        background: var(--hover-gradient);
+        filter: blur(20px);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+        transform: translate(-50%, -50%);
+        z-index: -1;
+    }
+
+    .tech-item:hover::before {
+        opacity: 1;
     }
 
     .tech-item:hover {
+        transform: scale(1.1);
         background: var(--hover-gradient);
-        transform: translateY(-3px);
         box-shadow: 0 8px 20px var(--shadow-hover-color);
+    }
+
+    @keyframes shine {
+        to {
+            background-position: 200% center;
+        }
     }
 </style>
