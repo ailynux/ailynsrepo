@@ -17,7 +17,10 @@ import TechStack from './TechStack.astro';
     <div class="about-sections">
       <div class="about-section background">
         <h2>Background</h2>
-        <p>I have a degree in Computer Information Systems and certifications in UNIX, C#, and mobile app development. I've taken plenty of courses in college on C++ and other programming languages.</p>
+        <p>
+          I hold a degree in Computer Information Systems and certifications in UNIX, C#, Full-Stack Development, and Mobile App Development. My passion for technology extends to creating with my 3D printer, programming IoT devices,
+           and working on Raspberry Pi projects. Customizing keyboards combines my love for electrical engineering with creativity, from sourcing components to programming each key.
+        </p>
       </div>
       <div class="about-section time">
         <h2>Local Time</h2>
@@ -38,12 +41,14 @@ import TechStack from './TechStack.astro';
       <div class="about-section hobbies">
         <h2>Skills</h2>
         <img src="/images/typing_01.webp" />
-        <p>I am proficient in full-stack development, with experience in TypeScript, React, Astro, SwiftUI, and more. I'm passionate about creating advanced, flashy, and interactive UI elements with animations. I love keeping up to date and learning new concepts.</p>
+        <p> I'm a full-stack developer with experience in TypeScript, React, Astro, and SwiftUI but i love learning new platforms and am very adapable to new envirnoments. I love building advanced, interactive UI elements with animations. 
+          Keeping up with the latest trends and continuously learning new concepts is something I enjoy and prioritize.</p>
       </div>
       <div class="about-section skills">
         <h2>Get to Know Me...</h2>
-        <p>I am proficient in full-stack development, with experience in TypeScript, React, Astro, SwiftUI, and more. I'm passionate about creating advanced, flashy, and interactive UI elements with animations. I love keeping up to date and learning new concepts.
-
+        <img src="/images/pokemon-nintendo.gif" />
+        <p>As a full-stack developer, I work with JavaScript, React, Astro, and SwiftUI. I have a special fondness for CSS and enjoy experimenting with different frameworks to make sites more mobile-friendly. 
+          I focus on making websites accessible to everyone and find great satisfaction in deploying user-friendly sites. My passion is in creating interactive, animated UIs and staying up-to-date with new technologies.
         </p>
       </div>
       <div class="about-section gallery">
@@ -124,7 +129,7 @@ import TechStack from './TechStack.astro';
   }
   
   .cta-button {
-  background: linear-gradient(135deg, #3c6e4f 0%, #eefafa 100%);
+  background: linear-gradient(135deg, #757575 0%, #eefafa 100%);
   color: #000;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -141,7 +146,7 @@ import TechStack from './TechStack.astro';
 }
 
 .cta-button:hover {
-  background: linear-gradient(135deg, #e0f0f0 0%, #0084ff 100%);
+  background: linear-gradient(135deg, #049494 0%, #0084ff 100%);
   transform: scale(1.1);
   box-shadow: 0 0 20px rgba(224, 224, 224, 0.7), 0 0 30px rgba(132, 0, 255, 0.7);
 }
@@ -186,7 +191,7 @@ import TechStack from './TechStack.astro';
 
 .about-section {
   background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
-  padding: 1.5rem;
+  padding: 2.5rem;
   border-radius: 15px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -201,10 +206,10 @@ import TechStack from './TechStack.astro';
 
 .about-section h2 {
   font-size: 3rem;
-  margin-bottom: 1rem;
-  color: #00ff99;
+  margin-bottom: 0.2rem;
+  color: #ffffff;
   font-family: 'VT323', monospace;
-  text-shadow: 0 0 5px #ff0099, 0 0 10px #ff0099, 0 0 20px #ff0099, 0 0 40px #ff0099;
+  text-shadow: 0 0 5px #5a5a5a, 0 0 10px #5a5a5a, 0 0 20px #5a5a5a, 0 0 40px #5a5a5a;
 }
 
 .about-section p {
@@ -212,7 +217,7 @@ import TechStack from './TechStack.astro';
   color: #f0f0f0;
   font-family: 'VT323', monospace;
   line-height: 1.75;
-  text-shadow: 0 0 5px #00ff99, 0 0 10px #00ff99, 0 0 20px #00ff99, 0 0 40px #00ff99;
+  text-shadow: 0 0 5px #5299c2, 0 0 10px #5299c2, 0 0 20px #5299c2, 0 0 40px #5299c2;
 }
 
 .background {
@@ -249,7 +254,7 @@ import TechStack from './TechStack.astro';
   justify-content: center;
 }
 .gallery {
-  background: linear-gradient(135deg, #000000 0%, #cc4444 100%);
+  background: linear-gradient(135deg, #000000 0%, #d1c3c3 100%);
   padding: 1.5rem;
   border-radius: 15px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
@@ -287,7 +292,7 @@ import TechStack from './TechStack.astro';
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   max-width: 350px;
   width: 100%;
-  height: 250px;
+  height: 650px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -337,8 +342,8 @@ import TechStack from './TechStack.astro';
   border-radius: 10px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.8), inset 0 0 20px rgba(0, 255, 255, 0.3);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  max-width: 400px;
-  max-height: 600px;
+  max-width: 500px;
+  max-height: 800px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -352,11 +357,11 @@ import TechStack from './TechStack.astro';
 }
 
 #pong {
-  border: 2px solid white;
+  border: 4px solid white;
   background-color: black;
   width: 100%;
-  max-width: 400px;
-  max-height: 300px;
+  max-width: 500px;
+  height: 500px; /* Increased height */
   cursor: crosshair;
 }
 
@@ -472,79 +477,79 @@ import TechStack from './TechStack.astro';
   
 
 <script>
-  //the typing out name script 
-document.addEventListener("DOMContentLoaded", () => { //name 
-  const phrases = [
-    "Hello, I'm Ailyn.",
-    "I'm a programmer.",
-    "I'm a developer.",
-    "I'm a problem solver.",
-    "I'm a tech enthusiast.",
-    "I'm a lifelong learner.",
-    "I'm a full-stack developer.",
-    "I'm a creator.",
-    "I'm passionate about coding.",
-    "I'm an innovator."
-  ];
-  const typingSpeed = 100;
-  const erasingSpeed = 50;
-  const delayBetweenPhrases = 2000;
+  // the typing out name script 
+  document.addEventListener("DOMContentLoaded", () => {
+    const phrases = [
+      "Hello, I'm Ailyn.",
+      "I'm a programmer.",
+      "I'm a developer.",
+      "I'm a problem solver.",
+      "I'm a tech enthusiast.",
+      "I'm a lifelong learner.",
+      "I'm a full-stack developer.",
+      "I'm a creator.",
+      "I'm passionate about coding.",
+      "I'm an innovator."
+    ];
+    const typingSpeed = 100;
+    const erasingSpeed = 50;
+    const delayBetweenPhrases = 2000;
 
-  let phraseIndex = 0;
-  let charIndex = 0;
-  const typedTextElement = document.getElementById("typed-text");
-  const toggleButton = document.getElementById("toggle-button");
-  const additionalContent = document.getElementById("additional-content");
-  const heroSection = document.getElementById("about");
+    let phraseIndex = 0;
+    let charIndex = 0;
+    const typedTextElement = document.getElementById("typed-text");
+    const toggleButton = document.getElementById("toggle-button");
+    const additionalContent = document.getElementById("additional-content");
+    const heroSection = document.getElementById("about");
 
-  function type() {
-    if (typedTextElement) {
-      if (charIndex < phrases[phraseIndex].length) {
-        typedTextElement.textContent += phrases[phraseIndex].charAt(charIndex);
-        charIndex++;
-        setTimeout(type, typingSpeed);
-      } else {
-        setTimeout(erase, delayBetweenPhrases);
-      }
-    }
-  }
-
-  function erase() {
-    if (typedTextElement) {
-      if (charIndex > 0) {
-        typedTextElement.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
-        charIndex--;
-        setTimeout(erase, erasingSpeed);
-      } else {
-        phraseIndex++;
-        if (phraseIndex >= phrases.length) {
-          phraseIndex = 0;
+    function type() {
+      if (typedTextElement) {
+        if (charIndex < phrases[phraseIndex].length) {
+          typedTextElement.textContent += phrases[phraseIndex].charAt(charIndex);
+          charIndex++;
+          setTimeout(type, typingSpeed);
+        } else {
+          setTimeout(erase, delayBetweenPhrases);
         }
-        setTimeout(type, typingSpeed);
       }
     }
-  }
 
-  setTimeout(type, delayBetweenPhrases);
-
-  if (toggleButton && additionalContent && heroSection) {
-    toggleButton.addEventListener("click", () => {
-      if (additionalContent.style.display === "none" || additionalContent.style.display === "") {
-        additionalContent.style.display = "block";
-        heroSection.classList.add("expanded");
-        additionalContent.classList.add("show");
-      } else {
-        additionalContent.style.display = "none";
-        heroSection.classList.remove("expanded");
-        additionalContent.classList.remove("show");
+    function erase() {
+      if (typedTextElement) {
+        if (charIndex > 0) {
+          typedTextElement.textContent = phrases[phraseIndex].substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(erase, erasingSpeed);
+        } else {
+          phraseIndex++;
+          if (phraseIndex >= phrases.length) {
+            phraseIndex = 0;
+          }
+          setTimeout(type, typingSpeed);
+        }
       }
-    });
-  }
-});
-// name script of typing out finished here new script begins 
+    }
 
-//new script of local time begins 
-function updateTime() { //time
+    setTimeout(type, delayBetweenPhrases);
+
+    if (toggleButton && additionalContent && heroSection) {
+      toggleButton.addEventListener("click", () => {
+        if (additionalContent.style.display === "none" || additionalContent.style.display === "") {
+          additionalContent.style.display = "block";
+          heroSection.classList.add("expanded");
+          additionalContent.classList.add("show");
+        } else {
+          additionalContent.style.display = "none";
+          heroSection.classList.remove("expanded");
+          additionalContent.classList.remove("show");
+        }
+      });
+    }
+  });
+  // name script of typing out finished here new script begins 
+
+  // new script of local time begins 
+  function updateTime() {
     const timeElement = document.getElementById('local-time');
     if (timeElement) {
       const now = new Date();
@@ -554,194 +559,189 @@ function updateTime() { //time
   }
   setInterval(updateTime, 1000);
   updateTime();
-//end of time script local 
+  // end of time script local 
 
+  // new script begins ping pong game 
+  const canvas = document.getElementById("pong") as HTMLCanvasElement | null;
+  const context = canvas?.getContext("2d");
 
-//new script begins ping pong game 
-const canvas = document.getElementById("pong") as HTMLCanvasElement | null;
-const context = canvas?.getContext("2d");
-
-if (!canvas || !context) {
-  throw new Error("Canvas or 2D context could not be initialized.");
-}
-
-const user = {
-  x: 0,
-  y: canvas.height / 2 - 50,
-  width: 10,
-  height: 55,
-  color: "WHITE",
-  score: 0,
-};
-
-const com = {
-  x: canvas.width - 10,
-  y: canvas.height / 2 - 50,
-  width: 10,
-  height: 55,
-  color: "WHITE",
-  score: 0,
-};
-
-const ball = {
-  x: canvas.width / 2,
-  y: canvas.height / 2,
-  radius: 10,
-  speed: 5,
-  velocityX: 5,
-  velocityY: 5,
-  color: "WHITE",
-};
-
-let gameInterval: number | undefined;
-
-function drawRect(x: number, y: number, w: number, h: number, color: string) {
-  context!.fillStyle = color;
-  context!.fillRect(x, y, w, h);
-}
-
-function drawCircle(x: number, y: number, r: number, color: string) {
-  context!.fillStyle = color;
-  context!.beginPath();
-  context!.arc(x, y, r, 0, Math.PI * 2, false);
-  context!.closePath();
-  context!.fill();
-}
-
-function drawText(text: string, x: number, y: number, color: string) {
-  context!.fillStyle = color;
-  context!.font = "45px fantasy";
-  context!.fillText(text, x, y);
-}
-
-function drawNet() {
-  for (let i = 0; i <= canvas!.height; i += 15) {
-    drawRect(canvas!.width / 2 - 1, i, 2, 10, "WHITE");
-  }
-}
-
-function render() {
-  drawRect(0, 0, canvas!.width, canvas!.height, "BLACK");
-  drawNet();
-  drawRect(user.x, user.y, user.width, user.height, user.color);
-  drawRect(com.x, com.y, com.width, com.height, com.color);
-  drawCircle(ball.x, ball.y, ball.radius, ball.color);
-  drawText(user.score.toString(), canvas!.width / 4, canvas!.height / 5, "WHITE");
-  drawText(com.score.toString(), (3 * canvas!.width) / 4, canvas!.height / 5, "WHITE");
-}
-
-function game() {
-  update();
-  render();
-}
-
-function update() {
-  ball.x += ball.velocityX;
-  ball.y += ball.velocityY;
-
-  if (ball.y + ball.radius > canvas!.height || ball.y - ball.radius < 0) {
-    ball.velocityY = -ball.velocityY;
+  if (!canvas || !context) {
+    throw new Error("Canvas or 2D context could not be initialized.");
   }
 
-  let player = ball.x < canvas!.width / 2 ? user : com;
+  const user = {
+    x: 0,
+    y: canvas.height / 2 - 50,
+    width: 10,
+    height: 55,
+    color: "WHITE",
+    score: 0,
+  };
 
-  if (collision(ball, player)) {
-    let collidePoint = ball.y - (player.y + player.height / 2);
-    collidePoint = collidePoint / (player.height / 2);
-    let angleRad = (Math.PI / 4) * collidePoint;
-    let direction = ball.x < canvas!.width / 2 ? 1 : -1;
-    ball.velocityX = direction * ball.speed * Math.cos(angleRad);
-    ball.velocityY = ball.speed * Math.sin(angleRad);
-    ball.speed += 0.5;
+  const com = {
+    x: canvas.width - 10,
+    y: canvas.height / 2 - 50,
+    width: 10,
+    height: 55,
+    color: "WHITE",
+    score: 0,
+  };
+
+  const ball = {
+    x: canvas.width / 2,
+    y: canvas.height / 2,
+    radius: 10,
+    speed: 5,
+    velocityX: 5,
+    velocityY: 5,
+    color: "WHITE",
+  };
+
+  let gameInterval: ReturnType<typeof setInterval> | undefined;
+
+  function drawRect(x: number, y: number, w: number, h: number, color: string) {
+    context!.fillStyle = color;
+    context!.fillRect(x, y, w, h);
   }
 
-  if (ball.x - ball.radius < 0) {
-    com.score++;
+  function drawCircle(x: number, y: number, r: number, color: string) {
+    context!.fillStyle = color;
+    context!.beginPath();
+    context!.arc(x, y, r, 0, Math.PI * 2, false);
+    context!.closePath();
+    context!.fill();
+  }
+
+  function drawText(text: string, x: number, y: number, color: string) {
+    context!.fillStyle = color;
+    context!.font = "45px fantasy";
+    context!.fillText(text, x, y);
+  }
+
+  function drawNet() {
+    for (let i = 0; i <= canvas!.height; i += 15) {
+      drawRect(canvas!.width / 2 - 1, i, 2, 10, "WHITE");
+    }
+  }
+
+  function render() {
+    drawRect(0, 0, canvas!.width, canvas!.height, "BLACK");
+    drawNet();
+    drawRect(user.x, user.y, user.width, user.height, user.color);
+    drawRect(com.x, com.y, com.width, com.height, com.color);
+    drawCircle(ball.x, ball.y, ball.radius, ball.color);
+    drawText(user.score.toString(), canvas!.width / 4, canvas!.height / 5, "WHITE");
+    drawText(com.score.toString(), (3 * canvas!.width) / 4, canvas!.height / 5, "WHITE");
+  }
+
+  function game() {
+    update();
+    render();
+  }
+
+  function update() {
+    ball.x += ball.velocityX;
+    ball.y += ball.velocityY;
+
+    if (ball.y + ball.radius > canvas!.height || ball.y - ball.radius < 0) {
+      ball.velocityY = -ball.velocityY;
+    }
+
+    let player = ball.x < canvas!.width / 2 ? user : com;
+
+    if (collision(ball, player)) {
+      let collidePoint = ball.y - (player.y + player.height / 2);
+      collidePoint = collidePoint / (player.height / 2);
+      let angleRad = (Math.PI / 4) * collidePoint;
+      let direction = ball.x < canvas!.width / 2 ? 1 : -1;
+      ball.velocityX = direction * ball.speed * Math.cos(angleRad);
+      ball.velocityY = ball.speed * Math.sin(angleRad);
+      ball.speed += 0.5;
+    }
+
+    if (ball.x - ball.radius < 0) {
+      com.score++;
+      resetBall();
+    } else if (ball.x + ball.radius > canvas!.width) {
+      user.score++;
+      resetBall();
+    }
+
+    com.y += (ball.y - (com.y + com.height / 2)) * 0.1;
+
+    if (user.score === 10 || com.score === 10) {
+      resetGame();
+    }
+  }
+
+  function collision(b: any, p: any) {
+    p.top = p.y;
+    p.bottom = p.y + p.height;
+    p.left = p.x;
+    p.right = p.x + p.width;
+
+    b.top = b.y - b.radius;
+    b.bottom = b.y + b.radius;
+    b.left = b.x - b.radius;
+    b.right = b.x + b.radius;
+
+    return (
+      p.left < b.right &&
+      p.top < b.bottom &&
+      p.right > b.left &&
+      p.bottom > b.top
+    );
+  }
+
+  function resetBall() {
+    ball.x = canvas!.width / 2;
+    ball.y = canvas!.height / 2;
+    ball.speed = 5;
+    ball.velocityX = -ball.velocityX;
+  }
+
+  function resetGame() {
+    user.score = 0;
+    com.score = 0;
     resetBall();
-  } else if (ball.x + ball.radius > canvas!.width) {
-    user.score++;
-    resetBall();
+    render();
+    if (gameInterval) {
+      clearInterval(gameInterval);
+    }
   }
 
-  com.y += (ball.y - (com.y + com.height / 2)) * 0.1;
-
-  if (user.score === 10 || com.score === 10) {
-    resetGame();
+  function startGame() {
+    if (gameInterval) {
+      clearInterval(gameInterval);
+    }
+    gameInterval = setInterval(game, 1000 / 50);
   }
-}
 
-function collision(b: any, p: any) {
-  p.top = p.y;
-  p.bottom = p.y + p.height;
-  p.left = p.x;
-  p.right = p.x + p.width;
-
-  b.top = b.y - b.radius;
-  b.bottom = b.y + b.radius;
-  b.left = b.x - b.radius;
-  b.right = b.x + b.radius;
-
-  return (
-    p.left < b.right &&
-    p.top < b.bottom &&
-    p.right > b.left &&
-    p.bottom > b.top
-  );
-}
-
-function resetBall() {
-  ball.x = canvas!.width / 2;
-  ball.y = canvas!.height / 2;
-  ball.speed = 5;
-  ball.velocityX = -ball.velocityX;
-}
-
-function resetGame() {
-  user.score = 0;
-  com.score = 0;
-  resetBall();
-  render();
-  if (gameInterval) {
-    clearInterval(gameInterval);
+  function stopGame() {
+    if (gameInterval) {
+      clearInterval(gameInterval);
+    }
   }
-}
 
-function startGame() {
-  if (gameInterval) {
-    clearInterval(gameInterval);
+  canvas.addEventListener("mousemove", movePaddle);
+  function movePaddle(evt: MouseEvent) {
+    let rect = canvas!.getBoundingClientRect();
+    user.y = evt.clientY - rect.top - user.height / 2;
   }
-  gameInterval = setInterval(game, 1000 / 50);
-}
 
-function stopGame() {
-  if (gameInterval) {
-    clearInterval(gameInterval);
+  const startButton = document.getElementById("startButton");
+  if (startButton) {
+    startButton.addEventListener("click", startGame);
   }
-}
 
-canvas.addEventListener("mousemove", movePaddle);
-function movePaddle(evt: MouseEvent) {
-  let rect = canvas!.getBoundingClientRect();
-  user.y = evt.clientY - rect.top - user.height / 2;
-}
+  const stopButton = document.getElementById("stopButton");
+  if (stopButton) {
+    stopButton.addEventListener("click", stopGame);
+  }
 
-const startButton = document.getElementById("startButton");
-if (startButton) {
-  startButton.addEventListener("click", startGame);
-}
-
-const stopButton = document.getElementById("stopButton");
-if (stopButton) {
-  stopButton.addEventListener("click", stopGame);
-}
-
-const resetButton = document.getElementById("resetButton");
-if (resetButton) {
-  resetButton.addEventListener("click", resetGame);
-}
-
-
-
-
+  const resetButton = document.getElementById("resetButton");
+  if (resetButton) {
+    resetButton.addEventListener("click", resetGame);
+  }
 </script>
 

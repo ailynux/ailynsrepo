@@ -1,0 +1,269 @@
+---
+import React from 'react';
+import ThreeCanvas from '../components/ThreeCanvas.jsx';
+---
+<section id="contact" class="section">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
+    <div class="content">
+      <p>Feel free to reach out to me for collaboration opportunities or to discuss potential projects.</p>
+      <p>Email: <a href="mailto:ailyn@example.com">ailyn@example.com</a></p>
+    </div>
+    <div class="badges">
+      <a href="https://twitter.com/yourprofile" class="badge twitter" target="_blank">Twitter</a>
+      <a href="https://linkedin.com/in/yourprofile" class="badge linkedin" target="_blank">LinkedIn</a>
+      <a href="https://github.com/yourprofile" class="badge github" target="_blank">GitHub</a>
+    </div>
+    <a href="mailto:ailyn@example.com" class="cta-button">Get in Touch</a>
+    <div class="projects-section">
+      <h3 class="projects-title">Recent Projects</h3>
+      <div class="projects-container">
+        <div class="project-card">
+          <h4>Project One</h4>
+          <p>A brief description of project one.</p>
+        </div>
+        <div class="project-card">
+          <h4>Project Two</h4>
+          <p>A brief description of project two.</p>
+        </div>
+        <div class="project-card">
+          <h4>Project Three</h4>
+          <p>A brief description of project three.</p>
+        </div>
+      </div>
+    </div>
+    <div class="moving-text">
+      <span class="text-content">Ailyn Diaz</span>
+    </div>
+  </div>
+  <div class="floating-element floating-1"></div>
+  <div class="floating-element floating-2"></div>
+  <div class="floating-element floating-3"></div>
+</section>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+.section {
+  padding: 4rem 2rem;
+  border-radius: 15px;
+  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.section-title {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  position: relative;
+  z-index: 2;
+}
+
+.section-title::after {
+  content: '';
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #00d4ff;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.content {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.2rem;
+  color: #f0f0f0;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.badges {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1rem;
+  text-decoration: none;
+  color: #ffffff;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.badge.twitter {
+  background: #1DA1F2;
+}
+
+.badge.linkedin {
+  background: #0077B5;
+}
+
+.badge.github {
+  background: #333;
+}
+
+.badge:hover {
+  transform: scale(1.1);
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #fff;
+  background: #00d4ff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.cta-button:hover {
+  background: #0077b5;
+  transform: scale(1.05);
+}
+
+.projects-section {
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.projects-title {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 1rem;
+}
+
+.projects-container {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.project-card {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 1rem;
+  width: 200px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.project-card h4 {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 0.5rem;
+}
+
+.project-card p {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1rem;
+  color: #f0f0f0;
+}
+
+.floating-element {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  animation: floating 6s ease-in-out infinite;
+  z-index: 1;
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-20px) translateX(20px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.floating-element.floating-1 {
+  top: 10%;
+  left: 10%;
+  animation-duration: 6s;
+}
+
+.floating-element.floating-2 {
+  top: 40%;
+  left: 60%;
+  animation-duration: 8s;
+}
+
+.floating-element.floating-3 {
+  top: 70%;
+  left: 30%;
+  animation-duration: 10s;
+}
+
+.moving-text {
+  font-family: 'Roboto Mono', monospace;
+  font-size: 2rem;
+  color: #00d4ff;
+  text-align: center;
+  margin-top: 2rem;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  height: 2.5rem; /* Adjusted for demonstration */
+}
+
+.text-content {
+  display: inline-block;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+</style>

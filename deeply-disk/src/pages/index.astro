@@ -5,6 +5,7 @@ import Experience from '../components/Experience.astro';
 import Education from '../components/Education.astro';
 import About from '../components/About.astro';
 import Navbar from '../components/Navbar.astro';
+import ContactMe from '../components/ContactMe.astro';
 ---
 
 <Layout title="Welcome to Astro - Ailyn Diaz's Portfolio">
@@ -60,16 +61,11 @@ import Navbar from '../components/Navbar.astro';
         <!-- Education Section -->
         <Education />
 
-        <!-- Contact Section -->
-        <section id="contact" class="section">
-            <h2 class="section-title">Contact</h2>
-            <div class="content">
-                <p>Feel free to reach out to me for collaboration opportunities or to discuss potential projects.</p>
-                <p>Email: <a href="mailto:ailyn@example.com">ailyn@example.com</a></p>
-            </div>
-        </section>
-    </main>
-</Layout>
+         <!-- Contact Section -->
+         <ContactMe />
+         
+        </main>
+    </Layout>
 
 <script lang="ts">
 document.addEventListener("DOMContentLoaded", () => {
