@@ -1,82 +1,232 @@
 ---
-import React from 'react';
-import ThreeCanvas from '../components/ThreeCanvas.jsx';
+// This is a workaround as Astro doesn't support direct env access in .astro files.
+const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
 ---
-<section id="contact" class="section">
+<section id="contact" class="section contact-section">
   <div class="container">
     <h2 class="section-title">Contact</h2>
-    <div class="content">
-      <p>Feel free to reach out to me for collaboration opportunities or to discuss potential projects.</p>
-      <p>Email: <a href="mailto:ailyn@example.com">ailyn@example.com</a></p>
-    </div>
-    <div class="badges">
-      <a href="https://twitter.com/yourprofile" class="badge twitter" target="_blank">Twitter</a>
-      <a href="https://linkedin.com/in/yourprofile" class="badge linkedin" target="_blank">LinkedIn</a>
-      <a href="https://github.com/yourprofile" class="badge github" target="_blank">GitHub</a>
-    </div>
-    <a href="mailto:ailyn@example.com" class="cta-button">Get in Touch</a>
-    <div class="projects-section">
-      <h3 class="projects-title">Recent Projects</h3>
-      <div class="projects-container">
-        <div class="project-card">
-          <h4>Project One</h4>
-          <p>A brief description of project one.</p>
-        </div>
-        <div class="project-card">
-          <h4>Project Two</h4>
-          <p>A brief description of project two.</p>
-        </div>
-        <div class="project-card">
-          <h4>Project Three</h4>
-          <p>A brief description of project three.</p>
-        </div>
+    <div class="ascii-art">
+      $$$$$$\  $$$$$$\ $$\   $$\     $$\ $$\   $$\ 
+     $$  __$$\ \_$$  _|$$ |  \$$\   $$  |$$$\  $$ |
+     $$ /  $$ |  $$ |  $$ |   \$$\ $$  / $$$$\ $$ |
+     $$$$$$$$ |  $$ |  $$ |    \$$$$  /  $$ $$\$$ |
+     $$  __$$ |  $$ |  $$ |     \$$  /   $$ \$$$$ |
+     $$ |  $$ |  $$ |  $$ |      $$ |    $$ |\$$$ |
+     $$ |  $$ |$$$$$$\ $$$$$$$$\ $$ |    $$ | \$$ |
+     \__|  \__|\______|\________|\__|    \__|  \__|
+                                                   
+                                                   
+                                                   
+     $$$$$$$\  $$$$$$\  $$$$$$\  $$$$$$$$\         
+     $$  __$$\ \_$$  _|$$  __$$\ \____$$  |        
+     $$ |  $$ |  $$ |  $$ /  $$ |    $$  /         
+     $$ |  $$ |  $$ |  $$$$$$$$ |   $$  /          
+     $$ |  $$ |  $$ |  $$  __$$ |  $$  /           
+     $$ |  $$ |  $$ |  $$ |  $$ | $$  /            
+     $$$$$$$  |$$$$$$\ $$ |  $$ |$$$$$$$$\         
+     \________/_______/____/____/_________/_Thanks!
+                                                                         
+     </div>
+
+     <div class="scene">
+      
+      <div class="cube">
+        <div class="face front">Hello World!</div>
+        <div class="face back">I'm Ailyn</div>
+        <div class="face left">I'm Ailyn.</div>
+        <div class="face right">Hello World!</div>
+        <div class="face top">I'm Ailyn</div>
+        <div class="face bottom">Hello World!</div>
       </div>
     </div>
-    <div class="moving-text">
-      <span class="text-content">Ailyn Diaz</span>
+
+    <div class="contact-content">
+      
+      <div class="contact-info">
+        <p>Feel free to reach out to me for collaboration opportunities or to discuss potential projects.</p>
+        <img src="../images/profilepciture_comicstyle.png" alt="Ailyn Diaz" class="contact-image2"  />
+        <div class="social-icons">
+          <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
+            <img src="../images/github_logo.png" alt="GitHub" />
+            <p>GitHub</p>
+          </a>
+          <a href="https://leetcode.com/yourprofile" target="_blank" rel="noopener noreferrer">
+            <img src="../images/leet_code.png" alt="LeetCode" />
+            <p>Leet Code</p>
+          </a>
+          <a href="https://linktr.ee/yourprofile" target="_blank" rel="noopener noreferrer">
+            <img src="../images/linktree_logo.png" alt="Linktree" />
+            <p>Link Tree</p>
+          </a>
+        </div>
+
+   <!-- Contact form using Astro -->
+<form method="POST" id="contact-form">
+  <input type="hidden" name="access_key" value={accessKey}>
+  <!-- Honeypot Field -->
+  <div style="display:none;">
+    <label for="honeypot">Leave this field empty</label>
+    <input type="text" id="honeypot" name="honeypot" />
+  </div>
+  <div class="form-group">
+    <label for="user_name">Name</label>
+    <input type="text" id="user_name" name="user_name" required pattern="[a-zA-Z\s]+" title="Name should only contain letters." class="styled-input"/>
+  </div>
+  <div class="form-group">
+    <label for="user_email">Email</label>
+    <input type="email" id="user_email" name="user_email" required class="styled-input"/>
+  </div>
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" required class="styled-textarea"></textarea>
+  </div>
+  <!-- Google reCAPTCHA widget -->
+  <div class="g-recaptcha" data-sitekey="YOUR_SITE_KEY"></div>
+  <button type="submit" class="submit-button">Send Email</button>
+  <div id="result"></div>
+</form>
+<div class="header-container">
+  <h1>Thanks for stopping by!!!</h1>
+  <img src="../images/divercoding.webp" alt="Ailyn Diaz" />
+</div>
+        <!-- Success and error messages -->
+        <div id="form-status"></div>
+      </div>
     </div>
+    
   </div>
   <div class="floating-element floating-1"></div>
   <div class="floating-element floating-2"></div>
   <div class="floating-element floating-3"></div>
+  <div class="floating-element floating-4"></div>
+  <div class="floating-element floating-5"></div>
 </section>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const result = document.getElementById('result');
+
+  if (form && result) {
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      // Honeypot field validation
+      if (formData.get('honeypot')) {
+        result.innerHTML = "Spam detected!";
+        return;
+      }
+
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      result.innerHTML = "Please wait...";
+
+      fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: json
+      })
+      .then(async (response) => {
+        let json = await response.json();
+        if (response.status == 200) {
+          result.innerHTML = json.message;
+        } else {
+          console.log(response);
+          result.innerHTML = json.message;
+        }
+      })
+      .catch(error => {
+        console.log(error);
+        result.innerHTML = "Something went wrong!";
+      })
+      .then(function() {
+        form.reset();
+        setTimeout(() => {
+          if (result) {
+            result.style.display = "none";
+          }
+        }, 3000);
+      });
+    });
+  }
+});
+</script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+/* CSS for side-by-side alignment */
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 2rem; /* Adjust margin as needed */
+  }
 
-.section {
+  .header-container h1 {
+    margin-right: 1rem; /* Adjust spacing between heading and image */
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  .header-container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Example styling for rounded image */
+  }
+/* Additional styles for ASCII art */
+.ascii-art {
+    font-family: monospace;
+    white-space: pre;
+    font-size: 1.2rem;
+    line-height: 1.2;
+    color: #ffffff;
+    text-align: right;
+    padding-right: 30%;
+    margin: 2rem 0;
+    
+  }
+.contact-content {
+    padding: 4rem;
+    margin-top: 2rem;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+  }
+
+  .contact-content .contact-info {
+    max-width: 500px;
+  }
+
+.section.contact-section {
   padding: 4rem 2rem;
   border-radius: 15px;
-  background: linear-gradient(-45deg, #0f0c29, #302b63, #24243e);
-  background-size: 400% 400%;
-  animation: gradient 15s ease infinite;
+  background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
   margin-bottom: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .section-title {
   font-family: 'Roboto Mono', monospace;
   font-size: 2.5rem;
-  margin-bottom: 1rem;
   color: #ffffff;
   position: relative;
   z-index: 2;
+  margin-bottom: 2rem;
+  text-align: left;
+  text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff;
 }
 
 .section-title::after {
@@ -87,170 +237,191 @@ import ThreeCanvas from '../components/ThreeCanvas.jsx';
   background: #00d4ff;
   position: absolute;
   bottom: -5px;
-  left: 50%;
-  transform: translateX(-50%);
+  left: 0;
 }
 
-.content {
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.2rem;
-  color: #f0f0f0;
-  margin-bottom: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.badges {
+.contact-content {
   display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
   position: relative;
   z-index: 2;
 }
 
-.badge {
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1rem;
-  text-decoration: none;
-  color: #ffffff;
-  transition: background 0.3s ease, transform 0.3s ease;
+
+.contact-image2 {
+  max-width: 300px;
+  border-radius: 90%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px #00d4ff;
+  order: 1;
+  margin: auto; /* Center the image horizontally */
 }
 
-.badge.twitter {
-  background: #1DA1F2;
-}
 
-.badge.linkedin {
-  background: #0077B5;
-}
-
-.badge.github {
-  background: #333;
-}
-
-.badge:hover {
-  transform: scale(1.1);
-}
-
-.cta-button {
-  display: inline-block;
-  padding: 0.75rem 1.5rem;
-  font-size: 1rem;
-  font-weight: bold;
-  color: #fff;
-  background: #00d4ff;
-  border-radius: 5px;
-  text-decoration: none;
-  transition: background 0.3s ease, transform 0.3s ease;
-  margin-top: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.cta-button:hover {
-  background: #0077b5;
-  transform: scale(1.05);
-}
-
-.projects-section {
-  margin-top: 2rem;
-  position: relative;
-  z-index: 2;
-}
-
-.projects-title {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 2rem;
-  color: #ffffff;
-  margin-bottom: 1rem;
-}
-
-.projects-container {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-}
-
-.project-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  padding: 1rem;
-  width: 200px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-  transform: scale(1.05);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.project-card h4 {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 1.25rem;
-  color: #ffffff;
-  margin-bottom: 0.5rem;
-}
-
-.project-card p {
-  font-family: 'Nunito', sans-serif;
-  font-size: 1rem;
-  color: #f0f0f0;
-}
-
-.floating-element {
-  position: absolute;
-  width: 100px;
-  height: 100px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 50%;
-  animation: floating 6s ease-in-out infinite;
-  z-index: 1;
-}
-
-@keyframes floating {
-  0% {
-    transform: translateY(0) translateX(0);
+.contact-info {
+    text-align: left;
+    color: #e0e0e0;
+    margin-top: -2rem; /* Adjust this margin to bring it closer to the previous section */
+    max-width: 600px; /* Adjust as per your design needs */
+    padding-left: 20px; /* Add padding as needed */
   }
-  50% {
-    transform: translateY(-20px) translateX(20px);
+
+  .contact-info p {
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 0 0 5px #00d4ff;
   }
-  100% {
-    transform: translateY(0) translateX(0);
-  }
-}
-
-.floating-element.floating-1 {
-  top: 10%;
-  left: 10%;
-  animation-duration: 6s;
-}
-
-.floating-element.floating-2 {
-  top: 40%;
-  left: 60%;
-  animation-duration: 8s;
-}
-
-.floating-element.floating-3 {
-  top: 70%;
-  left: 30%;
-  animation-duration: 10s;
-}
-
-.moving-text {
-  font-family: 'Roboto Mono', monospace;
-  font-size: 2rem;
+.contact-info a {
   color: #00d4ff;
-  text-align: center;
-  margin-top: 2rem;
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-  height: 2.5rem; /* Adjusted for demonstration */
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
+
+.contact-info a:hover {
+  color: #ff0040;
+}
+
+.social-icons {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.social-icons p {
+ font-family: monospace;
+ font-size: large;
+ padding-left: 20%;
+}
+
+
+.social-icons a img {
+  width: 90px;
+  height: 80px;
+  filter: drop-shadow(0 0 5px #00d4ff);
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.social-icons a:hover img {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px #f5dee4);
+}
+
+.contact-form .form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Cyberpunk-themed form styles */
+
+/* Form group styling */
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  color: #00d4ff;
+  font-size: 1.4rem; /* Increased font size for labels */
+  text-transform: uppercase; /* Uppercase labels for a futuristic look */
+}
+
+.styled-input,
+.styled-textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #00d4ff;
+  background: #0a0a0a;
+  color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-size: 1.2rem; /* Increased font size for input fields */
+  line-height: 1.6; /* Improved line height for better readability */
+}
+
+.styled-input:focus,
+.styled-textarea:focus {
+  border-color: #ffa502;
+  box-shadow: 0 0 15px rgba(255, 165, 2, 0.8);
+}
+
+.styled-textarea {
+  resize: none;
+  min-height: 150px; /* Ensured minimum height for consistency */
+  font-size: 1.2rem; /* Increased font size for textarea */
+}
+
+.submit-button {
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase; /* Uppercase button text */
+  color: #ffffff;
+  background: linear-gradient(135deg, #3742fa, #621980);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.7);
+  margin-top: 2rem;
+}
+
+.submit-button:hover {
+  background: linear-gradient(135deg, #ff4757, #2ed573);
+  transform: scale(1.05);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 0, 64, 0.8);
+}
+/* Add these styles at the end of your existing CSS */
+/* this is the super cool cube that moves*/
+.scene {
+  width: 200px;
+  height: 200px;
+  perspective: 1000px;
+  margin: 2rem auto;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg);
+  animation: spin 10s infinite linear;
+}
+
+.face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(45deg, rgba(0, 0, 255, 0.8), rgba(0, 128, 255, 0.8));
+  border: 2px solid #00d4ff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 1.5rem;
+  color: #ffffff;
+  text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff;
+}
+
+.face.front  { transform: translateZ(100px); }
+.face.back   { transform: rotateY(180deg) translateZ(100px); }
+.face.left   { transform: rotateY(-90deg) translateZ(100px); }
+.face.right  { transform: rotateY(90deg) translateZ(100px); }
+.face.top    { transform: rotateX(90deg) translateZ(100px); }
+.face.bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
+}
+
+/* this is the super cool cube that moves*/
 
 .text-content {
   display: inline-block;
@@ -266,4 +437,97 @@ import ThreeCanvas from '../components/ThreeCanvas.jsx';
     transform: translateX(-100%);
   }
 }
+
+.floating-element {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: floating 6s ease-in-out infinite;
+  z-index: 1; /* Ensure these elements are behind other content */
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0) translateX(0);
+  }
+  50% {
+    transform: translateY(-40px) translateX(40px);
+  }
+  100% {
+    transform: translateY(0) translateX(0);
+  }
+}
+
+.floating-element.floating-1 {
+  top: 10%;
+  left: 10%;
+  animation-duration: 6s;
+  background: #ff4757;
+}
+
+.floating-element.floating-2 {
+  top: 10%;
+  left: 70%;
+  animation-duration: 8s;
+  background: #3742fa;
+}
+
+.floating-element.floating-3 {
+  top: 70%;
+  left: 80%;
+  animation-duration: 10s;
+  background: #2ed573;
+}
+
+.floating-element.floating-4 {
+  top: 20%;
+  left: 80%;
+  animation-duration: 12s;
+  background: #ffa502;
+}
+
+.floating-element.floating-5 {
+  top: 80%;
+  left: 65%;
+  animation-duration: 14s;
+  background: #621980;
+}
+
+
 </style>
+
+<!-- /* this is the super cool cube that moves*/ -->
+<script>
+  const cube = document.querySelector('.cube') as HTMLElement | null;
+  let isDragging = false;
+  let startX: number, startY: number, initialRotX: number, initialRotY: number;
+
+  if (cube) {
+    cube.style.animation = 'spin 10s infinite linear';
+  
+    document.addEventListener('mousedown', (e: MouseEvent) => {
+      isDragging = true;
+      startX = e.clientX;
+      startY = e.clientY;
+      initialRotX = parseFloat(getComputedStyle(cube).transform.split(',')[1]) || 0;
+      initialRotY = parseFloat(getComputedStyle(cube).transform.split(',')[0]) || 0;
+      cube.style.animation = 'none';
+    });
+
+    document.addEventListener('mousemove', (e: MouseEvent) => {
+      if (isDragging) {
+        let deltaX = e.clientX - startX;
+        let deltaY = e.clientY - startY;
+        let rotX = initialRotX + deltaY;
+        let rotY = initialRotY + deltaX;
+        cube.style.transform = `rotateX(${rotX}deg) rotateY(${rotY}deg)`;
+      }
+    });
+
+    document.addEventListener('mouseup', () => {
+      isDragging = false;
+      cube.style.animation = 'spin 10s infinite linear';
+    });
+  }
+</script>
