@@ -24,41 +24,48 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
      $$ |  $$ |  $$ |  $$  __$$ |  $$  /           
      $$ |  $$ |  $$ |  $$ |  $$ | $$  /            
      $$$$$$$  |$$$$$$\ $$ |  $$ |$$$$$$$$\         
-     \________/_______/____/____/_________/_Thanks!
+     \________/_______/____/____/_________/________
                                                                          
      </div>
 
-     <div class="scene">
-      
-      <div class="cube">
-        <div class="face front">Hello World!</div>
-        <div class="face back">I'm Ailyn</div>
-        <div class="face left">I'm Ailyn.</div>
-        <div class="face right">Hello World!</div>
-        <div class="face top">I'm Ailyn</div>
-        <div class="face bottom">Hello World!</div>
+     <div class="flex-container">
+      <div class="scene">
+        <div class="cube">
+          <div class="face front">Hello World!</div>
+          <div class="face back">Hello World</div>
+          <div class="face left">I'm Ailyn.</div>
+          <div class="face right">Hello World!</div>
+          <div class="face top">Hello World</div>
+          <div class="face bottom">Hello World!</div>
+        </div>
       </div>
+
     </div>
+
 
     <div class="contact-content">
       
       <div class="contact-info">
-        <p>Feel free to reach out to me for collaboration opportunities or to discuss potential projects.</p>
-        <img src="../images/profilepciture_comicstyle.png" alt="Ailyn Diaz" class="contact-image2"  />
+
         <div class="social-icons">
           <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
-            <img src="../images/github_logo.png" alt="GitHub" />
+            <img src="../images/social_github.png" alt="GitHub" />
             <p>GitHub</p>
           </a>
+          <a href="https://github.com/yourprofile" target="_blank" rel="noopener noreferrer">
+            <img src="../images/social_linkedin.png" alt="GitHub" />
+            <p>LinkedIn</p>
+          </a>
           <a href="https://leetcode.com/yourprofile" target="_blank" rel="noopener noreferrer">
-            <img src="../images/leet_code.png" alt="LeetCode" />
-            <p>Leet Code</p>
+            <img src="../images/social_leetcode.png" alt="LeetCode" />
+            <p>LeetCode</p>
           </a>
           <a href="https://linktr.ee/yourprofile" target="_blank" rel="noopener noreferrer">
-            <img src="../images/linktree_logo.png" alt="Linktree" />
-            <p>Link Tree</p>
+            <img src="../images/social_linktree.png" alt="Linktree" />
+            <p>LinkTree</p>
           </a>
         </div>
+        <p>Feel free to reach out to me for collaboration opportunities or to discuss potential projects.</p>
 
    <!-- Contact form using Astro -->
 <form method="POST" id="contact-form">
@@ -86,7 +93,6 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
   <div id="result"></div>
 </form>
 <div class="header-container">
-  <h1>Thanks for stopping by!!!</h1>
   <img src="../images/divercoding.webp" alt="Ailyn Diaz" />
 </div>
         <!-- Success and error messages -->
@@ -100,6 +106,18 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
   <div class="floating-element floating-3"></div>
   <div class="floating-element floating-4"></div>
   <div class="floating-element floating-5"></div>
+
+
+
+
+  <!-- Footer Section -->
+<footer class="site-footer">
+  <div class="container">
+    <p class="footer-title">Ailyn's Dev Portfolio</p>
+    <p class="footer-year">&copy; <span id="currentYear"></span>. All rights reserved.</p>
+    <p class="footer-credits">Created by Ailyn Diaz</p>
+  </div>
+</footer>
 </section>
 
 <script>
@@ -155,17 +173,59 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
     });
   }
 });
+// TypeScript to dynamically set the current year in the footer
+window.addEventListener('DOMContentLoaded', () => {
+  const currentYearElement = document.getElementById('currentYear');
+  if (currentYearElement !== null) {
+    currentYearElement.textContent = new Date().getFullYear().toString();
+  }
+});
+
 </script>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+
+
+.flex-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 2rem; /* Adjust as necessary */
+}
+
+.scene, .contact-image2 {
+  flex: 1;
+  max-width: 45%; /* Adjust as necessary */
+}
+
+.scene {
+  display: flex;
+  justify-content: center;
+}
+
+.contact-image2 {
+  display: block;
+  margin: auto;
+}
+
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+  }
+
+  .scene, .contact-image2 {
+    max-width: 100%;
+  }
+}
+
 /* CSS for side-by-side alignment */
 .header-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 2rem; /* Adjust margin as needed */
+
   }
 
   .header-container h1 {
@@ -178,7 +238,7 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
   .header-container img {
     max-width: 100%;
     height: auto;
-    border-radius: 50%; /* Example styling for rounded image */
+    border-radius: 20%; /* Example styling for rounded image */
   }
 /* Additional styles for ASCII art */
 .ascii-art {
@@ -211,7 +271,7 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
 .section.contact-section {
   padding: 4rem 2rem;
   border-radius: 15px;
-  background: linear-gradient(135deg, #0a0a0a, #1c1c1c);
+  background: linear-gradient(90deg, #000000, #757474);
   margin-bottom: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   position: relative;
@@ -226,7 +286,7 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
   z-index: 2;
   margin-bottom: 2rem;
   text-align: left;
-  text-shadow: 0 0 5px #00d4ff, 0 0 10px #00d4ff;
+
 }
 
 .section-title::after {
@@ -251,12 +311,13 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
 
 
 .contact-image2 {
-  max-width: 300px;
-  border-radius: 90%;
+  width: auto; /* Adjust size to make the image smaller */
+  height: auto; /* Ensure height matches width to keep it square */
+  border-radius: 0; /* Remove rounded corners */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px #00d4ff;
-  order: 1;
-  margin: auto; /* Center the image horizontally */
+  object-fit: cover; /* Ensure the image covers the entire square area */
 }
+
 
 
 .contact-info {
@@ -274,13 +335,13 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
     text-shadow: 0 0 5px #00d4ff;
   }
 .contact-info a {
-  color: #00d4ff;
+  color: #dee0e0;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .contact-info a:hover {
-  color: #ff0040;
+  color: #6a9699;
 }
 
 .social-icons {
@@ -290,7 +351,7 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
 }
 
 .social-icons p {
- font-family: monospace;
+  font-family: monospace;
  font-size: large;
  padding-left: 20%;
 }
@@ -299,7 +360,7 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
 .social-icons a img {
   width: 90px;
   height: 80px;
-  filter: drop-shadow(0 0 5px #00d4ff);
+  filter: drop-shadow(0 0 5px #ffffff);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
@@ -312,19 +373,17 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
   margin-bottom: 1.5rem;
 }
 
-/* Cyberpunk-themed form styles */
-
 /* Form group styling */
 .form-group {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
   font-weight: bold;
-  color: #00d4ff;
-  font-size: 1.4rem; /* Increased font size for labels */
+  color: #f1f1f1;
+  font-size: 1.2rem; /* Increased font size for labels */
   text-transform: uppercase; /* Uppercase labels for a futuristic look */
 }
 
@@ -332,7 +391,7 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
 .styled-textarea {
   width: 100%;
   padding: 1rem;
-  border: 1px solid #00d4ff;
+  border: 1px solid #7e7e7e;
   background: #0a0a0a;
   color: #ffffff;
   border-radius: 8px;
@@ -344,13 +403,13 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
 
 .styled-input:focus,
 .styled-textarea:focus {
-  border-color: #ffa502;
-  box-shadow: 0 0 15px rgba(255, 165, 2, 0.8);
+  border-color: #3c6aff;
+  box-shadow: 0 0 15px rgba(39, 125, 255, 0.8);
 }
 
 .styled-textarea {
   resize: none;
-  min-height: 150px; /* Ensured minimum height for consistency */
+  min-height: 50px; /* Ensured minimum height for consistency */
   font-size: 1.2rem; /* Increased font size for textarea */
 }
 
@@ -366,14 +425,14 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
   border-radius: 8px;
   cursor: pointer;
   transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(0, 212, 255, 0.7);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5), 0 0 20px rgba(255, 255, 255, 0.7);
   margin-top: 2rem;
 }
 
 .submit-button:hover {
-  background: linear-gradient(135deg, #ff4757, #2ed573);
+  background: linear-gradient(135deg, #92020e, #f06c00);
   transform: scale(1.05);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.7), 0 0 30px rgba(255, 0, 64, 0.8);
+  box-shadow: 0 6px 15px rgba(248, 248, 248, 0.7), 0 0 30px rgba(255, 0, 64, 0.8);
 }
 /* Add these styles at the end of your existing CSS */
 /* this is the super cool cube that moves*/
@@ -474,29 +533,88 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
 }
 
 .floating-element.floating-3 {
-  top: 70%;
-  left: 80%;
+  top: 19%;
+  left: 5%;
   animation-duration: 10s;
   background: #2ed573;
 }
 
 .floating-element.floating-4 {
-  top: 20%;
+  top: 18%;
   left: 80%;
   animation-duration: 12s;
   background: #ffa502;
 }
 
 .floating-element.floating-5 {
-  top: 80%;
-  left: 65%;
+  top: 27%;
+  left: 75%;
   animation-duration: 14s;
   background: #621980;
 }
 
+/**END FOOTER */
+/* Importing a graffiti-style web font */
+@font-face {
+  font-family: 'Urban Jungle';
+  src: url('../fonts/UrbanJungleDemo.otf') format('opentype');
+}
+
+.site-footer {
+  text-align: center;
+  padding: 70px 10px;
+  background-image: url('../images/2001.webp'); /* Pixel Art 8Bit GIF by pixel jeff*/
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+}
+
+.site-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Overlay to make text more readable */
+}
+
+.site-footer .container {
+  position: relative;
+  z-index: 1;
+}
+
+.footer-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #00d4ff; /* Use a striking color for graffiti effect */
+  text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.7);
+  font-family: 'Urban Jungle', sans-serif; /* Using the graffiti-style font */
+  margin: 0;
+  animation: shake 0.5s infinite alternate; /* Adding an animation for a dynamic effect */
+}
+
+.footer-year, .footer-credits {
+  font-size: 15px;
+  color: #fff;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin: 10px 0;
+}
+
+/* Animation for shaking text effect */
+@keyframes shake {
+  0% { transform: translateX(1); }
+  50% { transform: translateX(-2px); }
+  100% { transform: translateX(2px); }
+}
+
+
 
 </style>
 
+<!-- /* this is the super cool cube that moves*/ -->
 <!-- /* this is the super cool cube that moves*/ -->
 <script>
   const cube = document.querySelector('.cube') as HTMLElement | null;
@@ -505,7 +623,7 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
 
   if (cube) {
     cube.style.animation = 'spin 10s infinite linear';
-  
+
     document.addEventListener('mousedown', (e: MouseEvent) => {
       isDragging = true;
       startX = e.clientX;
@@ -530,4 +648,32 @@ const accessKey = import.meta.env.WEB3FORMS_ACCESS_KEY;
       cube.style.animation = 'spin 10s infinite linear';
     });
   }
+
+  // Fixing "Object is possibly 'null'" and "Type 'number' is not assignable to type 'string'"
+  let element = document.getElementById('elementId');
+  if (element !== null) {
+    element.textContent = '123'; // Ensure the text content is a string
+  }
+
+  // Example with null check
+  const someElement = document.getElementById('someElementId');
+  if (someElement !== null) {
+    someElement.textContent = 'Hello, world!';
+  }
+
+  // Example with non-null assertion operator
+  const anotherElement = document.getElementById('anotherElementId')!;
+  anotherElement.textContent = 'Hello, world!';
+
+  // Convert number to string
+  const someNumber: number = 123;
+  const someString: string = someNumber.toString();
+
+  // Set the current year in the footer
+const currentYearElement = document.getElementById('currentYear');
+if (currentYearElement !== null) {
+  currentYearElement.textContent = new Date().getFullYear().toString();
+}
+
 </script>
+

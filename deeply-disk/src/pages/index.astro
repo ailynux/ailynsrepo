@@ -17,6 +17,17 @@ import ContactMe from '../components/ContactMe.astro';
                     <h1>Ailyn Diaz</h1>
                     <p class="profile-description">I like to craft solid and scalable apps with great user experiences and design.</p>
                     <p class="profile-info">Enthusiastic about learning new technologies and building user-friendly web applications. Eager to contribute to team success through hard work and continuous learning.</p>
+                    <div class="badges">
+                        <a href="https://github.com/ailynux" target="_blank" class="badge github">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://www.linkedin.com/in/ailyn-diaz-802943225" target="_blank" class="badge linkedin">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://leetcode.com/ailyn-diaz" target="_blank" class="badge leetcode">
+                            <i class="fas fa-code"></i> LeetCode
+                        </a>
+                    </div>
                 </div>
                 <div class="profile-image-container">
                     <div class="photo-frame">
@@ -86,7 +97,34 @@ document.addEventListener("DOMContentLoaded", () => {
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
     @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap');
+    @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css');
 
+    .badges {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1rem;
+    }
+
+    .badge {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        border-radius: 5px;
+        background-color: #000000;
+        color: #c9d1d9;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .badge i {
+        margin-right: 0.5rem;
+    }
+
+    .badge:hover {
+        background-color: #9adacc;
+        transform: translateY(-2px);
+        color: #000000;
+    }
     body {
         font-family: 'Nunito', sans-serif;
         background: #0f0f0f;
@@ -109,15 +147,35 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     .profile-section {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding: 4rem 2rem;
-        background: rgba(255, 255, 255, 0.1);
-        border-radius: 15px;
-        margin-bottom: 2rem;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    }
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 4rem 2rem;
+    background: url('./images/itsme_lol.webp') no-repeat center center;
+    background-size: cover;
+    border-radius: 15px;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: #fff;
+    position: relative;
+}
+
+.profile-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6); /* Overlay to enhance text visibility */
+    border-radius: 15px;
+}
+
+.profile-content {
+    position: relative;
+    z-index: 1;
+}
+
 
     .profile-content {
         display: flex;
@@ -144,7 +202,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     .profile-info {
         font-size: 1.2rem;
-        color: #b43f3f;
+        color: #e2ee9f;
     }
 
     .profile-image-container {

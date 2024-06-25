@@ -5,8 +5,8 @@ import './EducationSection.css'; // Import the CSS file
 
 const educationItems = [
   {
-    school: "Aims Community College",
-    degree: "Associate of Science in Computer Information Systems",
+    school: "Associate of Science",
+    degree: "Computer Information Systems",
     year: 2023,
     details: "GPA: 4.0 - High Honors, Summa Cum Laude",
     link: "https://www.aims.edu/",
